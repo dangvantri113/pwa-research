@@ -1,4 +1,4 @@
-const myStaticDevCoffee = "my-coffee-site-v1";
+const myStaticDevCoffee = "my-pwa-site-v1";
 const assets = [
   "/",
   "/index.html",
