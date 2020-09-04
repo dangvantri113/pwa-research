@@ -1,7 +1,7 @@
 const myStaticDevCoffee = "my-pwa-site-v1";
 const assets = [
   "/",
-  "/index.html",
+  "/index.php",
   "/css/style.css",
   "/js/app.js",
   "/images/coffee1.jpg",
@@ -46,4 +46,4 @@ addEventListener('fetch', function(event) {
             }
           })
   );
-}); 
+});
