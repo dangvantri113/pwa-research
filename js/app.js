@@ -10,7 +10,7 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459
       console.log(response);
     })
     .then(data => {
-        console.log('Success:', data);
+        console.log(data)
     })
     .catch(err => {
       console.log(err);
