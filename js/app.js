@@ -10,7 +10,7 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459
     .then(data => {
         console.log(data)
         let output = "";
-        data.forEach(
+        data.resultss.forEach(
             ({ title, image }) =>
                 (output += `
               <div class="card">
