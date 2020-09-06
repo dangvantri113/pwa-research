@@ -1,10 +1,9 @@
 const container = document.querySelector(".container");
 const NASA_KEY = 'A69yhDJ7vAsvXio2KdkhNa0Jw5CFkOpMtV7Pw2Px';
-fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/quickAnswer?q=How%20much%20vitamin%20c%20is%20in%202%20apples%253F", {
+fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459b07344f9e802ca81&query=pasta&maxFat=25&number=2", {
   "method": "GET",
   "headers": {
-    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-    "x-rapidapi-key": "e33f0d152amsha7cea4c27a92895p1eff89jsn1ea37f7b44aa"
+      "Content-Type": "application/json",
   }
 })
     .then(response => {
