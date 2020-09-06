@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 const NASA_KEY = 'A69yhDJ7vAsvXio2KdkhNa0Jw5CFkOpMtV7Pw2Px';
-fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459b07344f9e802ca81&query=pasta&maxFat=25&number=2", {
+fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459b07344f9e802ca81&query=pasta", {
   "method": "GET",
   "headers": {
       "Content-Type": "application/json",
