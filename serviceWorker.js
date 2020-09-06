@@ -31,7 +31,7 @@ addEventListener('fetch', function(event) {
             } else {
               return fetch(event.request)     //fetch from internet
                   .then(function(res) {
-                    return caches.open(CACHE_DYNAMIC_NAME)
+                    return caches.open(myStaticDevCoffee)
                         .then(function(cache) {
                           cache.put(event.request.url, res.clone());    //save the response for future
                           return res;   // return the fetched data
