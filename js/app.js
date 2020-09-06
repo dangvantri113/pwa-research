@@ -7,7 +7,21 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459
   }
 })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        console.log(data)
+        let output = "";
+        data.forEach(
+            ({ title, image }) =>
+                (output += `
+              <div class="card">
+                <img class="card--avatar" src=${image} />
+                <h1 class="card--title">${title}</h1>
+                <a class="card--link" href="#">Taste</a>
+              </div>
+              `)
+        );
+        container.innerHTML = output;
+    })
     .catch(err => {
       console.log(err);
     });
@@ -49,22 +63,22 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459
 //     image: "images/coffee9.jpg"
 //   }
 // ];
-const showCoffees = () => {
-  let output = "";
-  coffees.forEach(
-    ({ name, image }) =>
-      (output += `
-              <div class="card">
-                <img class="card--avatar" src=${image} />
-                <h1 class="card--title">${name}</h1>
-                <a class="card--link" href="#">Taste</a>
-              </div>
-              `)
-  );
-  container.innerHTML = output;
-};
+// const showCoffees = () => {
+//   let output = "";
+//   coffees.forEach(
+//     ({ name, image }) =>
+//       (output += `
+//               <div class="card">
+//                 <img class="card--avatar" src=${image} />
+//                 <h1 class="card--title">${name}</h1>
+//                 <a class="card--link" href="#">Taste</a>
+//               </div>
+//               `)
+//   );
+//   container.innerHTML = output;
+// };
 
-document.addEventListener("DOMContentLoaded", showCoffees);
+// document.addEventListener("DOMContentLoaded", showCoffees);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
