@@ -32,7 +32,7 @@ self.addEventListener('fetch', function(event) {
                   .catch(function(err) {       // fallback mechanism
                     return caches.open(myStaticDev)
                         .then(function(cache) {
-                          return cache.match('/offline.html');
+                          return cache.match('offline.html');
                         });
                   });
             }
