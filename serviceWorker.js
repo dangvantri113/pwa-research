@@ -29,7 +29,7 @@ self.addEventListener('fetch', function(event) {
                           return res;   // return the fetched data
                         })
                   })
-                  .catch(function(err) {       // fallback mechanism
+                  .catch(function() {       // fallback mechanism
                       return caches.match('/offline.html');
                   });
             }
