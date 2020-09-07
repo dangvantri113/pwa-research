@@ -1,30 +1,34 @@
 const container = document.querySelector(".container");
-const NASA_KEY = 'A69yhDJ7vAsvXio2KdkhNa0Jw5CFkOpMtV7Pw2Px';
-fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459b07344f9e802ca81&query=pasta", {
-  "method": "GET",
-  "headers": {
-      "Content-Type": "application/json",
-  }
-})
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        let output = "";
-        data.results.forEach(
-            ({ title, image }) =>
-                (output += `
+
+function updateResult(){
+    query = document.querySelector("#input-query").value;
+    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=aa5a4a416f0f4459b07344f9e802ca81&query="+query, {
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            let output = "";
+            data.results.forEach(
+                ({ title, image }) =>
+                    (output += `
               <div class="card">
                 <img class="card--avatar" src=${image} />
                 <h1 class="card--title">${title}</h1>
                 <a class="card--link" href="#">Taste</a>
               </div>
               `)
-        );
-        container.innerHTML = output;
-    })
-    .catch(err => {
-      console.log(err);
-    });
+            );
+            container.innerHTML = output;
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+updateResult()
 // const coffees = [
 //   {
 //     name: "Perspiciatis",

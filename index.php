@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -18,19 +18,21 @@
     <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
     <meta name="theme-color" content="#db4938" />
     <title>Dev'Coffee PWA</title>
-  </head>
-  <body>
-    <main>
-      <nav>
+</head>
+<body>
+<main>
+    <nav>
         <h1>Dev'Coffee</h1>
+        <input type="text" name="query" id="input-query">
+        <button onclick="updateResult()">Search</button>
         <ul>
-          <li><a href="https://vnexpress.net/" target="_blank">Home</a></li>
-          <li>About</li>
-          <li>Blog</li>
+            <li><a href="https://vnexpress.net/" target="_blank">Home</a></li>
+            <li>About</li>
+            <li>Blog</li>
         </ul>
-      </nav>
-      <div class="container"></div>
-    </main>
-    <script src="js/app.js"></script>
-  </body>
+    </nav>
+    <div class="container"></div>
+</main>
+<script src="js/app.js"></script>
+</body>
 </html>
