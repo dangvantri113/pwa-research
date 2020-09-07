@@ -1,4 +1,4 @@
-const myStaticDevCoffee = "my-pwa-site-v1";
+const myStaticDev = "my-pwa-site-v1";
 const assets = [
   "/",
   "/index.php",
@@ -9,7 +9,7 @@ const assets = [
 
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
-    caches.open(myStaticDevCoffee).then(cache => {
+    caches.open(myStaticDev).then(cache => {
       cache.addAll(assets);
     })
   );
@@ -23,14 +23,17 @@ self.addEventListener('fetch', function(event) {
             } else {
               return fetch(event.request)     //fetch from internet
                   .then(function(res) {
-                    return caches.open(myStaticDevCoffee)
+                    return caches.open(myStaticDev)
                         .then(function(cache) {
                           cache.put(event.request.url, res.clone());    //save the response for future
                           return res;   // return the fetched data
                         })
                   })
-                  .catch(function() {       // fallback mechanism
-                      return caches.match('/offline.html');
+                  .catch(function(err) {       // fallback mechanism
+                    return caches.open(myStaticDev)
+                        .then(function(cache) {
+                          return cache.match('/offline.html');
+                        });
                   });
             }
           })

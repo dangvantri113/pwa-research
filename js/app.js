@@ -23,6 +23,9 @@ function updateResult(){
               `)
             );
             container.innerHTML = output;
+        })
+        .catch(err => {
+            console.log(err);
         });
 }
 updateResult()
